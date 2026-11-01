@@ -224,10 +224,3 @@ select:focus {
     form > label {
         font-size: 17px;
     }
-
-    .save-btn {
-        width: 85%;
-        font-size: 18px;
-    }
-}
-```
