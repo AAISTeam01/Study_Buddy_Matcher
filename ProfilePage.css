@@ -157,7 +157,11 @@ select:focus {
 }
 
 /* Save Button */
-button {
+.create-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 100%;
     min-height: 58px;
     margin-top: 25px;
@@ -167,18 +171,18 @@ button {
     color: white;
     font-size: 21px;
     font-weight: bold;
+    text-decoration: none;
     cursor: pointer;
     transition: background 0.2s, transform 0.2s;
 }
 
-button:hover {
+.create-btn:hover {
     background: #103c78;
 }
 
-button:active {
+.create-btn:active {
     transform: scale(0.99);
 }
-
 /* Mobile Screen */
 @media (max-width: 600px) {
     .top-header {
