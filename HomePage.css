@@ -1,0 +1,190 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #173d78;
+    background:
+        radial-gradient(ellipse at 10% 35%, #d6e8ff 0%, transparent 40%),
+        radial-gradient(ellipse at 90% 70%, #d6e8ff 0%, transparent 40%),
+        #edf5ff;
+}
+
+/* Header */
+.top-header {
+    min-height: 80px;
+    padding: 12px 30px;
+    background: linear-gradient(110deg, #24559a, #17447f);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.cap {
+    font-size: 40px;
+}
+
+.tagline {
+    font-size: 17px;
+    font-style: italic;
+}
+
+/* Main Card */
+.hero-card {
+    width: min(700px, calc(100% - 30px));
+    margin: 40px auto 30px;
+    padding: 25px 24px;
+    background: rgba(255, 255, 255, 0.97);
+    border: 1px solid #d4e3f8;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(39, 87, 151, 0.16);
+}
+
+.hero-icon {
+    font-size: 65px;
+    margin-bottom: 7px;
+}
+
+h1 {
+    color: #174987;
+    font-size: clamp(28px, 4vw, 45px);
+    margin: 8px 0 15px;
+}
+
+.description {
+    font-size: clamp(16px, 2vw, 23px);
+    line-height: 1.5;
+    color: #526176;
+    margin-bottom: 26px;
+}
+
+/* Features */
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 13px;
+    margin-bottom: 26px;
+}
+
+.feature {
+    background: #e3efff;
+    border-radius: 16px;
+    padding: 17px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.feature:hover {
+    transform: translateY(-4px);
+}
+
+.feature-icon {
+    font-size: 37px;
+}
+
+.feature p {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #183b70;
+    margin: 10px 0 0;
+}
+
+/* Registration Button */
+.create-button {
+    display: block;
+    width: min(420px, 100%);
+    margin: 0 auto;
+    padding: 17px 15px;
+    background: linear-gradient(100deg, #1455a5, #174c96);
+    color: white;
+    border-radius: 13px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.create-button:hover {
+    background: #103c78;
+    transform: translateY(-2px);
+}
+
+/* Login Link */
+.login-text {
+    margin: 20px 0 0;
+    font-size: 17px;
+    color: #172b4d;
+}
+
+.login-text a {
+    color: #1759ad;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.login-text a:hover {
+    color: #103c78;
+}
+
+/* Mobile Layout */
+@media (max-width: 600px) {
+
+    .top-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 18px 12px;
+    }
+
+    .brand {
+        font-size: 23px;
+        gap: 10px;
+    }
+
+    .cap {
+        font-size: 35px;
+    }
+
+    .tagline {
+        font-size: 15px;
+    }
+
+    .hero-card {
+        margin-top: 25px;
+        padding: 25px 15px;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .feature {
+        min-height: 145px;
+    }
+
+    .create-button {
+        font-size: 18px;
+    }
+
+    .login-text {
+        font-size: 15px;
+    }
+}
