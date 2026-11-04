@@ -1,0 +1,262 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(120deg, #dceaff, #f4f8ff, #dceaff);
+}
+
+/* Header */
+header {
+    height: 76px;
+    background: linear-gradient(100deg, #245b9e, #17477f);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.logo span {
+    font-size: 35px;
+}
+
+.logo h2 {
+    font-size: 27px;
+}
+
+header p {
+    font-size: 17px;
+    font-style: italic;
+}
+
+/* Main Section */
+main {
+    min-height: calc(100vh - 76px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 20px;
+}
+
+/* OTP Card */
+.otp-container {
+    width: 760px;
+    max-width: 100%;
+    background: white;
+    padding: 45px 75px 35px;
+    border-radius: 32px;
+    box-shadow: 0 15px 40px rgba(48, 91, 145, 0.12);
+    text-align: center;
+}
+
+/* OTP Icon */
+.otp-icon {
+    position: relative;
+    display: inline-block;
+    font-size: 75px;
+    margin-bottom: 12px;
+}
+
+.otp-icon span {
+    position: absolute;
+    right: -12px;
+    bottom: 5px;
+    background: #1874e8;
+    color: white;
+    font-size: 22px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Heading */
+.otp-container h1 {
+    color: #20558f;
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+/* Description */
+.description {
+    color: #52647e;
+    font-size: 21px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* OTP Boxes */
+.otp-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    margin-bottom: 25px;
+}
+
+.otp-inputs input {
+    width: 83px;
+    height: 80px;
+    border: 2px solid #d0def1;
+    border-radius: 14px;
+    outline: none;
+    background: #fbfdff;
+
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: #245b9e;
+    transition: 0.2s;
+}
+
+.otp-inputs input:focus {
+    border-color: #2475ed;
+    box-shadow: 0 0 0 3px rgba(36, 117, 237, 0.1);
+}
+
+/* Timer */
+.timer {
+    font-size: 20px;
+    color: #52647e;
+    margin-bottom: 28px;
+}
+
+.timer span {
+    color: #1765c0;
+    font-size: 25px;
+    margin-right: 5px;
+}
+
+.timer strong {
+    color: #1765c0;
+}
+
+/* Verify Button */
+.verify-btn {
+    width: 100%;
+    height: 68px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(100deg, #1765b9, #20549b);
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.verify-btn:hover {
+    background: #123f79;
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #8b9bb1;
+    font-size: 19px;
+    margin: 22px 0;
+}
+
+.divider span {
+    flex: 1;
+    height: 1px;
+    background: #d5e1f0;
+}
+
+/* Resend Button */
+.resend-btn {
+    width: 100%;
+    height: 58px;
+    border: 1px solid #d8e5f8;
+    border-radius: 13px;
+    background: #fbfdff;
+    color: #1765b9;
+    font-size: 21px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.resend-btn:hover {
+    background: #eaf3ff;
+}
+
+/* Back Link */
+.back-link {
+    display: inline-block;
+    margin-top: 25px;
+    color: #1765b9;
+    font-size: 19px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 650px) {
+
+    header {
+        padding: 0 15px;
+    }
+
+    .logo {
+        gap: 8px;
+    }
+
+    .logo h2 {
+        font-size: 18px;
+    }
+
+    header p {
+        display: none;
+    }
+
+    .otp-container {
+        padding: 35px 20px;
+    }
+
+    .otp-container h1 {
+        font-size: 36px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .otp-inputs {
+        gap: 8px;
+    }
+
+    .otp-inputs input {
+        width: 43px;
+        height: 55px;
+        font-size: 22px;
+    }
+
+    .timer {
+        font-size: 15px;
+    }
+
+    .verify-btn {
+        height: 58px;
+        font-size: 19px;
+    }
+}
