@@ -73,6 +73,7 @@ public class JWTServices {
             return decryptedData.getClaim("email").asString();
 
         } catch (Exception e) {
+        	e.printStackTrace();
             return null;
         }
     }

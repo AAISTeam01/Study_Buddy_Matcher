@@ -2,7 +2,6 @@ package com.studybuddy.servlets;
 
 import java.io.IOException;
 import java.security.SecureRandom;
-import java.util.UUID;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -68,13 +67,12 @@ public class RegistrationPageServlet extends HttpServlet {
             return;
         }
 
-        // Generating unique user ID
-
-        String userID = UUID.randomUUID().toString();
+    
+        
 
         // Creating UserSchema object
 
-        UserSchema newUser = new UserSchema( userID, name, email, course, branch, semester, password );
+        UserSchema newUser = new UserSchema( null, name, email, course, branch, semester, password );
 
         // Generating six-digit OTP
 

@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Buddy Matcher | Dashboard</title>
+    <link rel="stylesheet" href="Dashboard.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+            <span>🎓</span>
+            <h2>Study Buddy<br><span>Matcher</span></h2>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="#" class="menu-item active">🏠 <span>Dashboard</span></a>
+            <a href="#" class="menu-item">👥 <span>Find Buddy</span></a>
+            <a href="#" class="menu-item">📖 <span>Study Materials</span></a>
+            <a href="#" class="menu-item">☑️ <span>Study Tasks</span></a>
+            <a href="#" class="menu-item">📅 <span>Sessions</span></a>
+            <a href="#" class="menu-item">🔔 <span>Notifications</span><b>2</b></a>
+            <a href="#" class="menu-item">💬 <span>Messages</span></a>
+            <a href="#" class="menu-item">👤 <span>Profile</span></a>
+        </nav>
+
+        <a href="LogoutServlet" class="menu-item logout">↪ <span>Logout</span></a>
+
+        <div class="sidebar-quote">
+            <div class="target-icon">🎯</div>
+            <h3>Study Together...<br>Grow Together!</h3>
+            <span>━━━━━━</span>
+        </div>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Top Header -->
+        <header class="top-header">
+
+            <button class="menu-toggle" id="menuToggle">☰</button>
+
+            <div class="search-bar">
+                <span>🔍</span>
+                <input type="text" placeholder="Search for study buddies...">
+            </div>
+
+            <div class="header-profile">
+                <button class="notification-btn" id="notificationBtn">
+                    🔔 <span>2</span>
+                </button>
+
+                <div class="profile-info">
+                    <div class="profile-avatar">A</div>
+                    <strong>Arpit Vats</strong>
+                    <span>⌄</span>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- Page Content -->
+        <section class="page-content">
+
+            <!-- Welcome Banner -->
+            <div class="welcome-banner">
+
+                <div class="welcome-text">
+                    <h1>Welcome back, Arpit! 👋</h1>
+                    <p>Let's find your perfect study buddy and achieve more together.</p>
+                </div>
+
+                <div class="welcome-illustration">
+                    <span>📚</span>
+                    <span>👨🏻‍💻</span>
+                    <span>💻</span>
+                </div>
+
+                <div class="banner-message">
+                    Study Smart,<br>Not Alone!
+                </div>
+
+            </div>
+
+            <!-- Statistics -->
+            <div class="stats-container">
+
+                <div class="stat-card blue">
+                    <span class="stat-icon">👥</span>
+                    <div>
+                        <h2>12+</h2>
+                        <p>Active Students</p>
+                    </div>
+                </div>
+
+                <div class="stat-card green">
+                    <span class="stat-icon">📅</span>
+                    <div>
+                        <h2>3</h2>
+                        <p>Upcoming Sessions</p>
+                    </div>
+                </div>
+
+                <div class="stat-card orange">
+                    <span class="stat-icon">✔</span>
+                    <div>
+                        <h2 id="taskCount">5</h2>
+                        <p>My Tasks</p>
+                    </div>
+                </div>
+
+                <div class="stat-card purple">
+                    <span class="stat-icon">🔔</span>
+                    <div>
+                        <h2>2</h2>
+                        <p>New Notifications</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Main Dashboard Grid -->
+            <div class="dashboard-grid">
+
+                <!-- Find Buddy -->
+                <section class="panel buddy-panel">
+
+                    <h2>🔍 Find Study Buddy</h2>
+                    <p>Search and connect with students who share your interests.</p>
+
+                    <div class="buddy-search">
+
+                        <select id="course">
+                            <option value="">All Courses</option>
+                            <option value="B.Tech">B.Tech</option>
+                            <option value="BCA">BCA</option>
+                            <option value="MCA">MCA</option>
+                        </select>
+
+                        <select id="branch">
+                            <option value="">All Branches</option>
+                            <option value="IT">IT</option>
+                            <option value="CSE">CSE</option>
+                            <option value="ECE">ECE</option>
+                        </select>
+
+                        <select id="interest">
+                            <option value="">All Interests</option>
+                            <option value="Java">Java</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="DSA">DSA</option>
+                        </select>
+
+                        <button id="searchBuddyBtn">🔍 Search</button>
+
+                    </div>
+
+                    <div id="searchMessage" class="search-message"></div>
+
+                </section>
+
+                <!-- Recent Notifications -->
+                <section class="panel notifications-panel">
+
+                    <div class="panel-heading">
+                        <h2>🔔 Recent Notifications</h2>
+                        <a href="#">View All →</a>
+                    </div>
+
+                    <div class="notification-item">
+                        <span class="notification-icon">👥</span>
+                        <div>
+                            <h4>Riya Sharma sent you a buddy request</h4>
+                            <small>2 hours ago</small>
+                        </div>
+                        <span class="notification-dot"></span>
+                    </div>
+
+                    <div class="notification-item">
+                        <span class="notification-icon green-icon">📅</span>
+                        <div>
+                            <h4>Study session on DSA is scheduled</h4>
+                            <small>5 hours ago</small>
+                        </div>
+                    </div>
+
+                    <div class="notification-item">
+                        <span class="notification-icon blue-icon">📄</span>
+                        <div>
+                            <h4>New study material uploaded</h4>
+                            <small>1 day ago</small>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- My Tasks -->
+                <section class="panel tasks-panel">
+
+                    <div class="panel-heading">
+                        <h2>☑️ My Tasks</h2>
+                        <a href="#">View All →</a>
+                    </div>
+
+                    <div class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <span>Complete DSA practice set</span>
+                        <label class="high">High</label>
+                    </div>
+
+                    <div class="task-item">
+                        <input type="checkbox" class="task-checkbox" checked>
+                        <span>Read OS notes</span>
+                        <label class="done">Done</label>
+                    </div>
+
+                    <div class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <span>Prepare for upcoming test</span>
+                        <label class="medium">Medium</label>
+                    </div>
+
+                </section>
+
+                <!-- Motivational Quote -->
+                <section class="quote-card">
+
+                    <div class="quote-mark">“</div>
+
+                    <h2>
+                        Small steps every day<br>
+                        lead to big results.
+                    </h2>
+
+                    <div class="plant">🪴</div>
+
+                    <div class="quote-line"></div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="Dashboard.js"></script>
+</body>
+</html>

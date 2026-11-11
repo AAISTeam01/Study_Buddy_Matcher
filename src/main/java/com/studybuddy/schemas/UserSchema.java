@@ -1,7 +1,11 @@
+
 package com.studybuddy.schemas;
+
+import java.util.List;
 
 public class UserSchema {
 
+    // Registration details
     private String userID;
     private String name;
     private String email;
@@ -10,8 +14,16 @@ public class UserSchema {
     private String semester;
     private String password;
 
+    // Profile details
+    private List<String> subjects;
+    private List<String> interest;
+    private String studyMode;
+    private List<String> studyTime;
+
+    // Constructor
     public UserSchema(String userID, String name, String email,
-            String course, String branch, String semester, String password) {
+            String course, String branch, String semester,
+            String password) {
 
         this.userID = userID;
         this.name = name;
@@ -22,6 +34,7 @@ public class UserSchema {
         this.password = password;
     }
 
+    // Registration getters
     public String getUserID() {
         return userID;
     }
@@ -48,5 +61,44 @@ public class UserSchema {
 
     public String getPassword() {
         return password;
+    }
+
+    // User ID setter
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
+
+    // Profile getters
+    public List<String> getSubjects() {
+        return subjects;
+    }
+
+    public List<String> getInterest() {
+        return interest;
+    }
+
+    public String getStudyMode() {
+        return studyMode;
+    }
+
+    public List<String> getStudyTime() {
+        return studyTime;
+    }
+
+    // Profile setters
+    public void setSubjects(List<String> subjects) {
+        this.subjects = subjects;
+    }
+
+    public void setInterest(List<String> interest) {
+        this.interest = interest;
+    }
+
+    public void setStudyMode(String studyMode) {
+        this.studyMode = studyMode;
+    }
+
+    public void setStudyTime(List<String> studyTime) {
+        this.studyTime = studyTime;
     }
 }
