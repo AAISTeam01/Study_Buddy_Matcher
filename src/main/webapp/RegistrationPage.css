@@ -13,6 +13,14 @@ body {
         #edf5ff;
 }
 
+.error-message {
+    color: #e53935;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 8px 0 12px;
+    text-align: center;
+}
+
 /* Header */
 .top-header {
     min-height: 95px;

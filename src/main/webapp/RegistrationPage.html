@@ -1,11 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration - Study Buddy Matcher</title>
-    <link rel="stylesheet" href="RegistrationPage.css">
+    <link rel="stylesheet" href="RegistrationPage.css?v=2">
 </head>
+
 <body>
 
     <header class="top-header">
@@ -26,26 +29,26 @@
         <div class="divider"></div>
 
         <form action="RegistrationPageServlet" method="post">
-
+        
             <label for="name">Name :</label>
             <div class="input-box">
                 <span>👤</span>
                 <input type="text" id="name" name="name"
-                       placeholder="Enter Name" required>
+                    placeholder="Enter Name" required>
             </div>
 
             <label for="email">Email :</label>
             <div class="input-box">
                 <span>✉</span>
-                <input type="email" id="email" name="email"
-                       placeholder="Enter Email" required>
+                <input type="email" id="email" name="email"placeholder="Enter Email" required>
             </div>
+            <p id="errorMessage" class="error-message"></p>
 
             <label for="course">Course :</label>
             <div class="input-box">
                 <span>🎓</span>
                 <input type="text" id="course" name="course"
-                       placeholder="Enter Course" required>
+                    placeholder="Enter Course" required>
             </div>
 
             <label for="branch">Branch :</label>
@@ -84,15 +87,15 @@
             <div class="input-box">
                 <span>🔒</span>
                 <input type="password" id="password" name="password"
-                       placeholder="Enter Password" required>
+                    placeholder="Enter Password" required>
             </div>
 
             <label for="confirmPassword">Confirm Password :</label>
             <div class="input-box">
                 <span>🔒</span>
                 <input type="password" id="confirmPassword"
-                       name="confirmPassword"
-                       placeholder="Re-enter Password" required>
+                    name="confirmPassword"
+                    placeholder="Re-enter Password" required>
             </div>
 
             <button type="submit">👤+ &nbsp; Create Account</button>
@@ -105,6 +108,19 @@
         </p>
 
     </main>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+
+        const errorMessage = document.getElementById("errorMessage");
+
+        if (params.get("error") === "emailExists") {
+
+            errorMessage.textContent =
+                "Email is already registered. Please use another email.";
+
+        }
+    </script>
 
 </body>
 </html>

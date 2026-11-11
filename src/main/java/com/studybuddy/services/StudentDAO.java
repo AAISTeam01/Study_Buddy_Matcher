@@ -1,3 +1,4 @@
+
 package com.studybuddy.services;
 
 import com.studybuddy.helper.DatabaseConnection;
@@ -10,19 +11,16 @@ import org.bson.Document;
 
 public class StudentDAO {
 
+    // Save complete student information
     public boolean saveStudent(UserSchema student) {
 
         try {
-
-            // Connect to database
             MongoDatabase database =
                     DatabaseConnection.getDatabase();
 
-            // Select collection
             MongoCollection<Document> collection =
                     database.getCollection("Students");
 
-            // Create student document
             Document document = new Document();
 
             // Registration details
@@ -40,7 +38,6 @@ public class StudentDAO {
             document.append("studyMode", student.getStudyMode());
             document.append("studyTime", student.getStudyTime());
 
-            // Save in MongoDB
             collection.insertOne(document);
 
             System.out.println("Student saved successfully!");
@@ -48,38 +45,50 @@ public class StudentDAO {
             return true;
 
         } catch (Exception e) {
-
             System.out.println("Error saving student data:");
             e.printStackTrace();
-
             return false;
         }
     }
+
+    // Check whether User ID already exists
     public boolean isUserIDExists(String userID) {
 
-        MongoDatabase database = DatabaseConnection.getDatabase();
+        MongoDatabase database =
+                DatabaseConnection.getDatabase();
 
         MongoCollection<Document> collection =
                 database.getCollection("Students");
 
         return collection.find(
-                new Document("userID", userID)
+                new Document("userID", userID.trim().toUpperCase())
         ).first() != null;
     }
-    
- // Find student using email and password during login
-    public Document findUserForLogin(String email, String password) {
 
-        MongoDatabase database = DatabaseConnection.getDatabase();
+    // Check whether Email already exists
+    public boolean isEmailExists(String email) {
+
+        MongoDatabase database =
+                DatabaseConnection.getDatabase();
 
         MongoCollection<Document> collection =
                 database.getCollection("Students");
 
-        Document query = new Document("email", email)
-                             .append("password", password);
+        return collection.find(
+                new Document("email", email.trim().toLowerCase())
+        ).first() != null;
+    }
 
-        Document user = collection.find(query).first();
+    // Find student during login
+    public Document findUserForLogin(String email, String password) {
 
-        return user;
+        MongoDatabase database = DatabaseConnection.getDatabase();
+        MongoCollection<Document> collection = database.getCollection("Students");
+
+        Document query = new Document(
+                "email", email.trim().toLowerCase()
+        ).append("password", password);
+
+        return collection.find(query).first();
     }
 }
