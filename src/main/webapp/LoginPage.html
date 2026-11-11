@@ -1,10 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Study Buddy Matcher</title>
+    <link rel="stylesheet" href="LoginPage.css">
 </head>
 <body>
-<h1> Sabar ka naam suna hai</h1>
+
+    <!-- Header -->
+    <header class="top-header">
+        <div class="brand">
+            <span class="cap">🎓</span>
+            <span>Study Buddy Matcher</span>
+        </div>
+        <div class="tagline">Learn Together • Grow Together</div>
+    </header>
+
+    <!-- Login Card -->
+    <main class="login-card">
+
+        <div class="hero-icon">👥</div>
+
+        <h1>Welcome Back!</h1>
+        <h3>Login to Continue Your Journey</h3>
+
+        <div class="divider"></div>
+
+        <!-- Login Form -->
+        <form action="LoginPageServlet" method="post">
+
+            <label for="email">Email :</label>
+            <div class="input-box">
+                <span>✉</span>
+                <input type="email" id="email" name="email"
+                       placeholder="Enter Email" required>
+            </div>
+
+            <label for="password">Password :</label>
+            <div class="input-box">
+                <span>🔒</span>
+                <input type="password" id="password" name="password"
+                       placeholder="Enter Password" required>
+            </div>
+
+            <!-- Remember Me -->
+            <div class="login-options">
+                <label>
+                    <input type="checkbox" name="rememberMe">
+                    Remember Me
+                </label>
+
+                <a href="#">Forgot Password?</a>
+            </div>
+
+            <button type="submit">🔑 &nbsp; Login</button>
+
+        </form>
+
+        <p class="register-text">
+            Don't have an account?
+            <a href="RegistrationPage.html">Register Here</a>
+        </p>
+
+    </main>
+
 </body>
 </html>
