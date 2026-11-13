@@ -97,8 +97,6 @@ public class LoginPageServlet extends HttpServlet {
 
         // Step-7: Redirect after successful login
 
-        response.sendRedirect(
-            request.getContextPath() + "/index.html"
-        );
+        response.sendRedirect("Dashboard.html");
     }
 }

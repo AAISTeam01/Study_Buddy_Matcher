@@ -116,6 +116,12 @@ form input#userID:focus {
     box-shadow: 0 0 5px rgba(49, 91, 145, 0.3);
 }
 
+.error-message {
+    color: red;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
 /* Checkbox Lists */
 .checkbox-list {
     width: 100%;

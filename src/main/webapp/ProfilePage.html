@@ -27,6 +27,7 @@
         <form action="ProfilePageServlet" method="post">
         	<label>User ID : </label>
         	<input type="text" id="userID" name="userID" class="userID" placeholder="Create Your User ID">
+            <p id="userIDError" class="error-message"></p>
             <label>Select Subjects :</label>
             <div class="checkbox-list subjects-list">
                 <label><input type="checkbox" name="subjects" value="java"> Java</label>
@@ -70,6 +71,13 @@
 
         </form>
     </main>
+    <script>
+    const params = new URLSearchParams(window.location.search);
 
+    if (params.get("error") === "userIDExists") {
+        document.getElementById("userIDError").textContent =
+            "This User ID is already used. Please make another.";
+    }
+</script>
 </body>
 </html>

@@ -21,9 +21,7 @@ public class ProfilePageServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     @Override
-    protected void doPost(HttpServletRequest request,
-            HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 
         // Get existing session
         HttpSession session = request.getSession(false);
@@ -59,9 +57,8 @@ public class ProfilePageServlet extends HttpServlet {
         StudentDAO dao = new StudentDAO();
 
         if (dao.isUserIDExists(userID)) {
-            response.sendError(
-                    HttpServletResponse.SC_CONFLICT,
-                    "User ID already used. Please try another ID."
+            response.sendRedirect(
+                "ProfilePage.html?error=userIDExists"
             );
             return;
         }
